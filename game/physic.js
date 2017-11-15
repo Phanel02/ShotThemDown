@@ -14,10 +14,7 @@ function update()
         player1.decelerate(moveDistance);
 
     player1.move();
-    if (delta % 2 == 0)
-        player2.accelerate(moveDistance);
-    else
-        player2.decelerate(moveDistance);
+    player2.decelerate(moveDistance);
     player2.move();
     controls.update();
 }

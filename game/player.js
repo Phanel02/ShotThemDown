@@ -37,6 +37,15 @@ var Player = function(name, color, position, direction) {
 
 Player.prototype.accelerate = function (distance) {
     var max = 2;
+    if (this.name == "ennemi") {
+        if (Math.abs(this.position.x) >= WIDTH / 2 ||
+        Math.abs(this.position.y) >= HEIGHT / 2)
+        {
+            this.graphic.position.x = 0;
+            this.graphic.position.y  = 0;
+        }
+        
+    }
 
     this.speed += distance / 4;
     if (this.speed >= max) {
